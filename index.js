@@ -11,7 +11,9 @@ let connection = null;
 const responses = new Map();
 let playersNow = [];
 
-const { PORT, TOKEN, CHANNEL, PREFIX, OPROLE, cmdResponse } = require('./config.json'); // config.jsonから設定を読み込む
+const { CHANNEL, PREFIX, OPROLE, cmdResponse } = require('./config.json'); // config.jsonから設定を読み込む
+const PORT = process.env.PORT || 19132;
+const TOKEN = process.env.kkr
 const lang = require('./lang.js'); // メッセージのカスタマイズ用
 if (PREFIX.startsWith('/')) throw new Error('Prefixに/,//は使えないよ');
 const prefixEscaped = new RegExp(`^${PREFIX.replace(/[-\/\\^$*+?.()|\[\]{}]/g, '\\$&')}`);
